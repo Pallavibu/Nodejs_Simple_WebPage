@@ -7,14 +7,16 @@ const fs = require('fs')
 const path = require('path')
 
 const app = http.createServer((req, res) => {
+    
+
 
     res.writeHead(200, {
         'Content-Type': 'text/html'
     })
 
-    let filePath = path.join(__dirname, 'public', req.url === '/' ? 'index.html' : req.url) 
+    let filePath = path.join(__dirname, 'public', req.url === '/' ? 'index.html' : req.url ) 
 
-    let conteType = 'text/html'
+    let contentType = 'text/html'
 
     let ext = path.extname(filePath)
     if(!ext) {
